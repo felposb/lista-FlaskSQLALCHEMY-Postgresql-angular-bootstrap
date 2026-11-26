@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-12">
+      <article class="card border-0 border-start border-5 border-warning bg-primary rounded-4">
+        <div class="card-body text-light p-4">
+          <h3>To do List Angular, Flask e PostgreSQL</h3>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-12 col-md-6 col-lg-12">
+      <app-form-input [nome]="novaPessoa"></app-form-input>
+
+    </div>
+
+  </div>
+  <div class="row g-2 mt-2">
+    <div class="col-12 col-md-6 col-lg-12">
+      <article class="card border-0 border-5 border-start border-primary border-end">
+      @for(p of pessoas(); track p.id){
+          <div class="card-body">
+
+            <article class="card border-0 border-5 border-start border-primary bg-light border-end">
+              <div class="card-body text-dark d-flex flex-row gap-2">
+                <p>{{p.id}}</p>
+                <p>{{p.nome}}</p>
+              </div>
+            </article>
+          </div>
+        }
+      </article>
+    </div>
+  </div>
+</div>
