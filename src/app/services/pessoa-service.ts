@@ -13,4 +13,11 @@ export class PessoaService {
   cadastrar(nome: Pessoa){
     return this.http.post<Pessoa>(`http://localhost:5000/pessoa/criar`, nome)
   }
+
+  deletar(id: number){
+    return this.http.delete<Pessoa>(`http://localhost:5000/pessoa/deletar/${id}`)
+  }
+  editar(pessoa: Pessoa){
+    return this.http.put<Pessoa>(`http://localhost:5000/pessoa/editar/${pessoa.id}`, pessoa)
+  }
 }

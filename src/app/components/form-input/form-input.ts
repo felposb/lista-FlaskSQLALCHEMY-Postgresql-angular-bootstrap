@@ -12,12 +12,16 @@ export class FormInput {
   @Input() nome: string = "";
 
   private pessoaService = inject(PessoaService);
-
+  @Input() buscar!: () => void;
   pessoa = signal<Pessoa | null>(null);
+
+
+
+
   cadastrar(){
     this.pessoaService.cadastrar({nome: this.nome} as Pessoa).subscribe({
-      next: (dados) =>{
-        this.pessoa.set(dados);
+      next: () => {
+        this.buscar();
       }
     })
   }
